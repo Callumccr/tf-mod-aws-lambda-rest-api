@@ -18,7 +18,8 @@ github_repo: https://github.com/Callumccr/tf-mod-aws-lambda-rest-api
 
 # Short description of this project
 description: |-
-  This module creates an AWS REST API & Deployment against AWS API gateway.
+  Use the `tf-mod-lambda-rest-api` module to create an AWS Gateway REST API & Deployment for existing lambda functions.
+  
   Additionally, it optionally creates the neccessary lambda permissions, security keys, and a usageplan.
 
 # External context to include
