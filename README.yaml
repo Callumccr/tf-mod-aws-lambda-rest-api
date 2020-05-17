@@ -1,0 +1,71 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: tf-mod-aws-lambda-rest-api
+
+# Canonical Git repo
+github_repo: https://github.com/Callumccr/tf-mod-aws-lambda-rest-api
+
+# # Badges to display
+# badges:
+#   - name: "Build Status"
+#     image: ""
+#     url: ""
+
+# Short description of this project
+description: |-
+  This module creates an AWS REST API & Deployment against AWS API gateway.
+  Additionally, it optionally creates the neccessary lambda permissions, security keys, and a usageplan.
+
+# External context to include
+include:
+  - "docs/terraform.md"
+
+# How to use this module
+usage: |-
+  The below values shown in the usage of this module are purely representative, please replace desired values as required.
+
+  TO-DO
+
+  ```hcl
+  ```
+
+# Simple and advanced examples of this project
+examples: |-
+  Simple and advanced examples of this project.
+
+  ### Advanced Example 1:
+
+  TO-DO
+
+    ```hcl
+    ```
+
+# Related projects
+related:
+  - name:
+    description:
+    url:
+
+# Contributor information
+contributors:
+  - name: "Callum Robertson"
+    github: "callumccr"
+    avatar: https://media-exp1.licdn.com/dms/image/C5603AQHb_3oZMZA5YA/profile-displayphoto-shrink_200_200/0?e=1588809600&v=beta&t=5QQQAlHrm1od5fQNZwdjOtbZWvsGcgNBqFRhZWgnPx4
+    homepage: https://www.linkedin.com/in/callum-robertson-1a55b6110/
+
+# Jira information
+jira:
+  - project:
+    project_url:
+    epic:
+    epic_url:
+    user_story:
+    user_story_url:
+
+---
+
