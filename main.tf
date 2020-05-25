@@ -14,8 +14,7 @@ resource "aws_api_gateway_rest_api" "default" {
     for_each = length(var.endpoint_type) > 0 ? var.endpoint_type : []
     iterator = endpoint
     content {
-      types            = endpoint.value
-      vpc_endpoint_ids = var.vpc_endpoint_ids
+      types = [endpoint.value]
     }
   }
 }
