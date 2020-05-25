@@ -48,6 +48,12 @@ variable "enabled" {
   default     = true
 }
 
+variable "lambda_config" {
+  type        = map(string)
+  default     = {}
+  description = "A map of lambda ids and their repective arns"
+}
+
 variable "api_name" {
   type        = string
   description = "(Required) - The name of the REST API"
