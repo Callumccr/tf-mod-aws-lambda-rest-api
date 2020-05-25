@@ -56,7 +56,8 @@ variable "lambda_config" {
 
 variable "api_name" {
   type        = string
-  description = "(Required) - The name of the REST API"
+  description = "(Optional) - The name of the REST API"
+  default     = ""
 }
 
 variable "description" {
