@@ -54,11 +54,11 @@ variable "lambda_config" {
   description = "A map of lambda ids and their repective arns"
 }
 
-variable "api_name" {
-  type        = string
-  description = "(Optional) - The name of the REST API"
-  default     = null
-}
+# variable "api_name" {
+#   type        = string
+#   description = "(Optional) - The name of the REST API"
+#   default     = null
+# }
 
 variable "description" {
   type        = string
