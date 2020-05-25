@@ -1,7 +1,7 @@
 
 resource "aws_api_gateway_rest_api" "default" {
   count                    = var.enabled && length(list(var.api_name)) > 0 ? 1 : 0
-  name                     = var.api_name
+  name                     = module.label.id
   description              = var.description
   policy                   = var.policy
   api_key_source           = var.api_key_source
