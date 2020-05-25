@@ -72,15 +72,15 @@ variable "binary_media_types" {
 }
 
 variable "endpoint_type" {
-  type        = string
-  description = "(Optional) -  (Required) A list of endpoint types. This resource currently only supports managing a single value. Valid values: EDGE, REGIONAL or PRIVATE. If unspecified, defaults to EDGE."
-  default     = "REGIONAL"
+  type        = list(string)
+  description = "(Optional) - A list of endpoint types. This resource currently only supports managing a single value. Valid values: EDGE, REGIONAL or PRIVATE. If unspecified, defaults to EDGE."
+  default     = ["REGIONAL"]
 }
 
 variable "vpc_endpoint_ids" {
   type        = string
   description = "(Optional) - A list of VPC Endpoint Ids. It is only supported for PRIVATE endpoint type."
-  default     = ""
+  default     = null
 }
 
 variable "minimum_compression_size" {

@@ -11,25 +11,17 @@ resource "aws_api_gateway_rest_api" "default" {
   tags                     = module.label.tags
 
   dynamic "endpoint_configuration" {
-    for_each = length(vpc_endpoint_ids) > 0 && var.types == ["PRIVATE"] ? var.types : []
+    for_each = length(var.endpoint_type) > 0 ? var.endpoint_type : []
     iterator = endpoint
     content {
       types            = endpoint.value
       vpc_endpoint_ids = var.vpc_endpoint_ids
     }
   }
-
-  dynamic "endpoint_configuration" {
-    for_each = length(var.types) > 0 ? var.types : []
-    iterator = endpoint
-    content {
-      types = endpoint.value
-    }
-  }
 }
 
 resource "aws_lambda_permission" "default" {
-  count         = var.enabled && length(list(var.function_names)) > 0 && aws_api_gateway_rest_api.default.*.id != null ? length(var.function_names) : 0
+  count         = var.enabled && length(list(var.function_names)) > 0 ? length(var.function_names) : 0
   statement_id  = "AllowExecutionFromAPIGateway"
   action        = "lambda:InvokeFunction"
   function_name = element(var.function_names, count.index)
