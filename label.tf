@@ -1,8 +1,10 @@
 module "label" {
-  source             = "git::https://github.com/cloudposse/terraform-null-label.git?ref=0.14.1"
-  context            = var.context
-  attributes         = ["cms"]
+  source             = "git::https://github.com/Callumccr/tf-mod-label.git?ref=master"
+  namespace          = var.namespace
+  environment        = var.environment
+  name               = var.name
+  attributes         = var.attributes
   delimiter          = "-"
-  label_order        = ["environment", "namespace", "name", "attributes"]
   additional_tag_map = {} /* Additional attributes (e.g. 1) */
+  label_order        = ["environment", "namespace", "name", "attributes"]
 }

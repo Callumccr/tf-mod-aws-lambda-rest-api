@@ -48,10 +48,17 @@ variable "enabled" {
   default     = true
 }
 
-variable "api_name" {
-  type        = string
-  description = "(Required) - The name of the REST API"
+variable "lambda_config" {
+  type        = map(string)
+  default     = {}
+  description = "A map of lambda ids and their repective arns"
 }
+
+# variable "api_name" {
+#   type        = string
+#   description = "(Optional) - The name of the REST API"
+#   default     = null
+# }
 
 variable "description" {
   type        = string
@@ -66,15 +73,15 @@ variable "binary_media_types" {
 }
 
 variable "endpoint_type" {
-  type        = string
-  description = "(Optional) -  (Required) A list of endpoint types. This resource currently only supports managing a single value. Valid values: EDGE, REGIONAL or PRIVATE. If unspecified, defaults to EDGE."
-  default     = "REGIONAL"
+  type        = list(string)
+  description = "(Optional) - A list of endpoint types. This resource currently only supports managing a single value. Valid values: EDGE, REGIONAL or PRIVATE. If unspecified, defaults to EDGE."
+  default     = ["REGIONAL"]
 }
 
 variable "vpc_endpoint_ids" {
   type        = string
   description = "(Optional) - A list of VPC Endpoint Ids. It is only supported for PRIVATE endpoint type."
-  default     = ""
+  default     = null
 }
 
 variable "minimum_compression_size" {
